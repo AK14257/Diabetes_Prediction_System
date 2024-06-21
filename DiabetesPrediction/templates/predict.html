@@ -1,0 +1,143 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Diabetes</title>
+    <style>
+        body {
+            background-image: url("{% static 'DiabetesPrediction/images/img2.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            padding-bottom: 100px; /* Adjusted padding to move content up */
+        }
+        .main {
+            max-width: 500px; /* Reduced the max-width */
+            margin: 20px auto; /* Adjusted margin */
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #4dc3ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0086b3;
+            font-size: 24px; /* Reduced font size */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px; /* Added margin bottom */
+        }
+        h2 {
+            color: #333;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 8px;
+        }
+        td:first-child {
+            font-weight: bold;
+        }
+        input[type=text] {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        input[type=submit] {
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100px;
+        }
+        input[type=submit]:hover {
+            background-color: #e68900;
+        }
+        .error-message {
+            color: red; /* Changed error message color to red */
+            font-weight: bold;
+            text-align: center;
+        }
+        .result-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align: center;">Diabetes Prediction System</h2>
+<div class="main">
+    <h1>Please enter the following information:</h1>
+    <form action="result">
+        <table>
+            <tr>
+                <td align="right">Pregnancies:</td>
+                <td align="left"><input type="text" name="n1"></td>
+            </tr>
+            <tr>
+                <td align="right">Glucose:</td>
+                <td align="left"><input type="text" name="n2"></td>
+            </tr>
+            <tr>
+                <td align="right">Blood Pressure:</td>
+                <td align="left"><input type="text" name="n3"></td>
+            </tr>
+            <tr>
+                <td align="right">Skin Thickness:</td>
+                <td align="left"><input type="text" name="n4"></td>
+            </tr>
+            <tr>
+                <td align="right">Insulin:</td>
+                <td align="left"><input type="text" name="n5"></td>
+            </tr>
+            <tr>
+                <td align="right">BMI:</td>
+                <td align="left"><input type="text" name="n6"></td>
+            </tr>
+            <tr>
+                <td align="right">Diabetes Pedigree Function:</td>
+                <td align="left"><input type="text" name="n7"></td>
+            </tr>
+            <tr>
+                <td align="right">Age:</td>
+                <td align="left"><input type="text" name="n8"></td>
+            </tr>
+        </table>
+        <div class="submit-container">
+            <input type="submit">
+        </div>
+    </form>
+    {% if result2 %}
+        <div class="error-message">
+            {{ result2 }}
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
