@@ -23,8 +23,6 @@ Installation
 To run this project locally, follow these steps:
 
 Clone the repository:
-
-sh
 Copy code
 git clone https://github.com/your-username/diabetes-prediction-system.git
 cd diabetes-prediction-system
@@ -44,11 +42,10 @@ Open your web browser and go to http://127.0.0.1:8000/.
 
 Usage
 Frontend:
-
 Navigate to the web application and input the required medical data into the form.
 Submit the form to receive a diabetes risk prediction.
-Backend:
 
+Backend:
 The Django server handles the form submission, processes the input data, and uses the trained machine learning model to generate a prediction.
 The result is then displayed to the user.
 
